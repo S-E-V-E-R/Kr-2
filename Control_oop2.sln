@@ -1,25 +1,63 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kr2", "Control_oop2\kr2.csproj", "{7240BA5D-7D5B-4648-ABDE-631DC6A59468}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7240BA5D-7D5B-4648-ABDE-631DC6A59468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7240BA5D-7D5B-4648-ABDE-631DC6A59468}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7240BA5D-7D5B-4648-ABDE-631DC6A59468}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7240BA5D-7D5B-4648-ABDE-631DC6A59468}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C2D6ABFC-42BB-4682-8CC1-5335FD9AD0DF}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace kr2
+{
+    class Program
+    {
+        struct adress_book
+        {
+            public struct sur_name 
+            {
+                public string surname;
+                public string name;
+                public string fathname;
+                public float birth;
+
+                public void surname_display()
+                {
+                    Console.WriteLine($"Surname: {surname}");
+                    Console.WriteLine($"Name: {name}");
+                    Console.WriteLine($"Father name: {fathname}");
+                    Console.WriteLine($"Date of birth: {birth}");
+                }
+            }
+
+            public struct adress
+            {
+                public string street;
+                public int number;
+                public string city;
+
+                public void adress_display()
+                {
+                    Console.WriteLine("_____________");
+                    Console.WriteLine($"Street: {street}");
+                    Console.WriteLine($"Number: {number}");
+                    Console.WriteLine($"City: {city}");
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+
+            adress_book.sur_name sur_name;
+            sur_name.surname = "Shpota";
+            sur_name.name = "Ilya";
+            sur_name.fathname = "Sergiyovich";
+            sur_name.birth = 26.06f;
+            sur_name.surname_display();
+
+            adress_book.adress adr;
+            adr.street = "Pupkina str.";
+            adr.number = 69;
+            adr.city = "Kiyv";
+            adr.adress_display();
+
+            /*int sum = ;
+            sum = (int)Math.Round(sum, 2);
+            Console.WriteLine("______________");
+            Console.WriteLine($"The sum of all citizens:{sum}");*/
+        }
+    }
+}
